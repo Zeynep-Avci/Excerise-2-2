@@ -1,26 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>at.ac.fhcampuswien</groupId>
-    <artifactId>prog2</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
-
-    <name>Prog2</name>
-    <description>prog2</description>
+    <artifactId>TddExample</artifactId>
+    <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <junitVersion>5.7.1</junitVersion>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- By default your version of Maven might use an old version of the maven-compiler-plugin
+        that is not compatible with Java 9 or later versions.
+        To directly target your installed Java version add the version to properties maven.compiler.source and maven.compiler.target
+        -->
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <!-- You can define version properties here that can be further used in the pom.xml -->
+        <junitVersion>5.7.1</junitVersion>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
     <dependencies>
+        <!-- JUnit 5 Dependencies -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
+            <version>${junitVersion}</version> <!-- use of a defined property -->
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
             <version>${junitVersion}</version>
             <scope>test</scope>
         </dependency>
@@ -30,11 +41,34 @@
             <version>${junitVersion}</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- Mocking Framework -->
         <dependency>
-            <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest-all</artifactId>
-            <version>1.3</version>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-inline</artifactId>
+            <version>3.7.7</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>3.7.7</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>2.22.2</version>
+            </plugin>
+        </plugins>
+    </build>
 </project>
+
+
