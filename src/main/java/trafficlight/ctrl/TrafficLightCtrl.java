@@ -1,9 +1,12 @@
 package trafficlight.ctrl;
 
+import trafficlight.Observer.Observer;
 import trafficlight.gui.TrafficLightGui;
 import trafficlight.states.State;
 
-public class TrafficLightCtrl {
+import javax.security.auth.Subject;
+
+public class TrafficLightCtrl{
 
     private State greenState;
 
@@ -25,6 +28,17 @@ public class TrafficLightCtrl {
         gui = new TrafficLightGui(this);
         gui.setVisible(true);
         //TODO useful to update the current state
+        currentState.notifyObserver();
+    }
+
+    //Implement controller as Singleton Patten:
+    private static TrafficLightCtrl controller;
+
+    public static TrafficLightCtrl getController(){
+        if(controller == null){
+            controller = new TrafficLightCtrl();
+        }
+        return controller;
     }
 
     private void initStates() {
@@ -33,6 +47,9 @@ public class TrafficLightCtrl {
             public State getNextState() {
                 previousState = currentState;
                 //TODO useful to update the current state and the old one
+                currentState.notifyObserver();
+                yellowState.notifyObserver();
+
                 return yellowState;
             }
             @Override
@@ -46,6 +63,9 @@ public class TrafficLightCtrl {
             public State getNextState() {
                 previousState = currentState;
                 //TODO useful to update the current state and the old one
+                yellowState.notifyObserver();
+                currentState.notifyObserver();
+
                 return yellowState;
             }
             @Override
@@ -60,10 +80,16 @@ public class TrafficLightCtrl {
                 if (previousState.equals(greenState)) {
                     previousState = currentState;
                     //TODO useful to update the current state and the old one
+                    currentState.notifyObserver();
+                    redState.notifyObserver();
+
                     return redState;
                 }else {
                     previousState = currentState;
                     //TODO useful to update the current state and the old one
+                    currentState.notifyObserver();
+                    greenState.notifyObserver();
+
                     return greenState;
                 }
             }
