@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TrafficLightTest {
 
     @Test
-    @DisplayName("Light goes from green to yellow?")
+    @DisplayName("Check if light goes from Green to Yellow")
     public void checkGreenToYellow() {
         TrafficLightCtrl trafficLight = TrafficLightCtrl.getController();
         trafficLight.nextState();
@@ -19,7 +19,7 @@ public class TrafficLightTest {
     }
 
     @Test
-    @DisplayName("Light goes from green to yellow?")
+    @DisplayName("Check if light goes from Green to Yellow")
     public void checkGreenToYellow2() {
         TrafficLightCtrl trafficLight = TrafficLightCtrl.getController();
         trafficLight.nextState();
@@ -28,7 +28,7 @@ public class TrafficLightTest {
 
 
     @Test
-    @DisplayName("Light goes from green to yellow?")
+    @DisplayName("Check if light goes from Green to Yellow")
     public void checkGreenToYellow3() {
         TrafficLightCtrl trafficLight = TrafficLightCtrl.getController();
         trafficLight.nextState();
@@ -36,7 +36,7 @@ public class TrafficLightTest {
     }
 
     @Test
-    @DisplayName("Check if light goes from")
+    @DisplayName("Check if light goes from Yellow to Red")
     public void checkYellowToRed2() {
         TrafficLightCtrl trafficLight = TrafficLightCtrl.getController();
         trafficLight.nextState();
@@ -45,7 +45,7 @@ public class TrafficLightTest {
     }
 
     @Test
-    @DisplayName("Check if light goes from")
+    @DisplayName("Check if light goes from Yellow to Red")
     public void checkYellowToRed3() {
         TrafficLightCtrl trafficLight = TrafficLightCtrl.getController();
         trafficLight.nextState();
@@ -54,7 +54,7 @@ public class TrafficLightTest {
     }
 
     @Test
-    @DisplayName("Check if light goes from")
+    @DisplayName("Check if light goes from Yellow to Red")
     public void checkYellowToRed() {
         TrafficLightCtrl trafficLight = TrafficLightCtrl.getController();
         trafficLight.nextState();
@@ -64,7 +64,7 @@ public class TrafficLightTest {
 
 
     @Test
-    @DisplayName("Check if light goes from")
+    @DisplayName("Check if light goes from Red to Yellow")
     public void checkRedToYellow() {
         TrafficLightCtrl trafficLight = TrafficLightCtrl.getController();
         trafficLight.nextState();
@@ -72,7 +72,7 @@ public class TrafficLightTest {
     }
 
     @Test
-    @DisplayName("Check if light goes from")
+    @DisplayName("Check if light goes from Red to Yellow")
     public void checkRedToYellow2() {
         TrafficLightCtrl trafficLight = TrafficLightCtrl.getController();
         trafficLight.nextState();
@@ -80,7 +80,7 @@ public class TrafficLightTest {
     }
 
     @Test
-    @DisplayName("Check if light goes from")
+    @DisplayName("Check if light goes from Red to Yellow")
     public void checkRedToYellow3() {
         TrafficLightCtrl trafficLight = TrafficLightCtrl.getController();
         trafficLight.nextState();
@@ -88,6 +88,7 @@ public class TrafficLightTest {
     }
 
     @Test
+    @DisplayName("Check if light goes Yellow to Green")
     public void checkYellowToGreen() {
         TrafficLightCtrl trafficLight = TrafficLightCtrl.getController();
         trafficLight.nextState();
@@ -96,7 +97,7 @@ public class TrafficLightTest {
     }
 
     @Test
-    @DisplayName("Light goes from yellow to green")
+    @DisplayName("Light goes from  Yellow to Green")
     public void checkYellowToGreen2() {
         TrafficLightCtrl trafficLight = TrafficLightCtrl.getController();
         trafficLight.nextState();
@@ -105,6 +106,7 @@ public class TrafficLightTest {
 
 
     @Test
+    @DisplayName("Light goes from  Yellow to Green")
     public void checkYellowToGreen3() {
         TrafficLightCtrl trafficLight = TrafficLightCtrl.getController();
         trafficLight.nextState();
