@@ -25,6 +25,7 @@ public class TrafficLightCtrl {
     private static TrafficLightCtrl instance;
 
 
+    //make constructor private, so that no more instances can be created
     private TrafficLightCtrl() {
         super();
         initStates();
