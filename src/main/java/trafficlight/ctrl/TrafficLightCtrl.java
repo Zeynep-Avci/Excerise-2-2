@@ -26,7 +26,7 @@ public class TrafficLightCtrl{
 
 
 
-    public TrafficLightCtrl() {
+    private TrafficLightCtrl() {
         super();
         initStates();
         gui = new TrafficLightGui(this);
