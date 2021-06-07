@@ -5,9 +5,9 @@ import trafficlight.Observer.Observer;
 
 import java.awt.*;
 
-public class TrafficLight extends Light implements Observer{
+class TrafficLight extends Light implements Observer{
 
-    TrafficLight(Color color) {
+    public TrafficLight(Color color) {
         super(color);
     }
 
@@ -26,7 +26,7 @@ public class TrafficLight extends Light implements Observer{
 
     public void update() {
 
-        turnOn(isOn==false);
+        turnOn(!isOn);
         /*
         turnOn(false);
         try {

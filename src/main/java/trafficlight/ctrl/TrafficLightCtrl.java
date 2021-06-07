@@ -22,6 +22,15 @@ public class TrafficLightCtrl{
 
     private boolean doRun = true;
 
+    //* Privates Klassenattribut, wird beim erstmaligen Gebrauch (nicht beim Laden) der Klasse erzeugt
+    //Sie besitzt einen privaten parameterlosen Konstruktor, um zu verhindern, daß andere Klassen durch Anwendung des new-Operators
+    // eine Instanz erzeugen (er verhindert allerdings auch das Ableiten anderer Klassen).
+    private static TrafficLightCtrl instance;
+    //* Statische Methode "getInstance()" liefert die einzige Instanz der Klasse zurück.
+    //* Ist synchronisiert und somit thread-sicher.
+    //Nachteil dieser Variante ist, dass auch nach der Instanziierung jeder Lesezugriff
+
+
     public TrafficLightCtrl() {
         super();
         initStates();
@@ -39,6 +48,10 @@ public class TrafficLightCtrl{
             controller = new TrafficLightCtrl();
         }
         return controller;
+    }
+
+    public State getCurrentState() {
+        return currentState;
     }
 
     private void initStates() {
@@ -63,8 +76,8 @@ public class TrafficLightCtrl{
             public State getNextState() {
                 previousState = currentState;
                 //TODO useful to update the current state and the old one
-                yellowState.notifyObserver();
                 currentState.notifyObserver();
+                yellowState.notifyObserver();
 
                 return yellowState;
             }
@@ -135,4 +148,6 @@ public class TrafficLightCtrl{
     public void stop() {
         doRun = false;
     }
+
+
 }
