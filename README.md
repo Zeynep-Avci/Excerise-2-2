@@ -1,8 +1,6 @@
 # Traffic Light
 
 Link: https://github.com/Zeynep-Avci/Excerise-2-2.git
-Info: die Tests funktionieren, wenn man sie einzeln überprüft. Gemeinsam geht das nicht
-
 
 
 Das ist das Codetemplate für die zweite Übung in Programmierung 2.

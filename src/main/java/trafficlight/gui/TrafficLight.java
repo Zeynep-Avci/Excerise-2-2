@@ -5,7 +5,7 @@ import trafficlight.Observer.Observer;
 
 import java.awt.*;
 
-class TrafficLight extends Light implements Observer{
+public class TrafficLight extends Light implements Observer{
 
     public TrafficLight(Color color) {
         super(color);
